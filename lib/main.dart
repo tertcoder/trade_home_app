@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trade_home_app/pages/starting_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +11,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Trade Home',
-      home: Text('Flutter Demo Home Page'),
+      theme: ThemeData(fontFamily: 'Manrope'),
+      home: const StartingPage(),
     );
   }
 }
