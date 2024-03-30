@@ -6,6 +6,16 @@ class StartingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Gradient gradient = LinearGradient(
+      colors: [
+        AppColors.green,
+        AppColors.darkGray,
+        AppColors.red,
+        AppColors.yellow,
+      ],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+    );
     return Scaffold(
       backgroundColor: AppColors.black,
       body: Center(
@@ -17,12 +27,17 @@ class StartingPage extends StatelessWidget {
               width: 265,
             ),
             const SizedBox(height: 12),
-            const Text(
-              "Trade Home",
-              style: TextStyle(
-                color: AppColors.white,
-                fontSize: 28,
-                fontWeight: FontWeight.w700,
+            ShaderMask(
+              blendMode: BlendMode.srcIn,
+              shaderCallback: (bounds) => gradient.createShader(
+                Rect.fromLTWH(0.0, 0.0, bounds.width, bounds.height),
+              ),
+              child: const Text(
+                "Trade Home",
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
             const SizedBox(height: 48),
