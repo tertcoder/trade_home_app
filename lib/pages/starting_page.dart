@@ -6,7 +6,7 @@ class StartingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Gradient gradient = LinearGradient(
+    const Gradient gradient = LinearGradient(
       colors: [
         AppColors.green,
         AppColors.darkGray,
