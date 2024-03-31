@@ -31,7 +31,7 @@ class Button extends StatelessWidget {
           label,
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: isPrimary ? AppColors.darkGray : AppColors.white,
+            color: isPrimary ? AppColors.black : AppColors.white,
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),

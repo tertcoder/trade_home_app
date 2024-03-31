@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trade_home_app/pages/login_page.dart';
+import 'package:trade_home_app/pages/signup_page.dart';
 import 'package:trade_home_app/pages/starting_page.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Trade Home',
       theme: ThemeData(fontFamily: 'Manrope'),
-      home: const LoginPage(),
+      home: const SignupPage(),
     );
   }
 }
