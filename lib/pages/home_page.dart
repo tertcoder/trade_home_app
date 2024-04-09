@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trade_home_app/components/app_heading.dart';
+import 'package:trade_home_app/components/item_tile.dart';
 import 'package:trade_home_app/theme/app_colors.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,18 +8,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.black,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               children: [
-                SizedBox(height: 25),
-                AppHeading(text: "Good Morning!"),
-                SizedBox(height: 36),
-                Row(
+                const SizedBox(height: 25),
+                const AppHeading(text: "Good Morning!"),
+                const SizedBox(height: 36),
+                const Row(
                   children: [
                     Text(
                       'Best',
@@ -39,7 +40,13 @@ class HomePage extends StatelessWidget {
                     )
                   ],
                 ),
-
+                Column(
+                  children: [
+                    ItemTile(
+                      toWishlist: () {},
+                    ),
+                  ],
+                ),
                 // ListView.builder(itemBuilder: itemBuilder),
               ],
             ),
