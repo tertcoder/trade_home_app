@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trade_home_app/components/app_heading.dart';
 import 'package:trade_home_app/components/item_tile.dart';
+import 'package:trade_home_app/pages/item_preview.dart';
 import 'package:trade_home_app/theme/app_colors.dart';
 
 class HomePage extends StatelessWidget {
@@ -44,6 +45,14 @@ class HomePage extends StatelessWidget {
                   children: [
                     ItemTile(
                       toWishlist: () {},
+                      previewItem: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ItemPreview(),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
