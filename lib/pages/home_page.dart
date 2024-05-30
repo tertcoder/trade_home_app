@@ -41,22 +41,38 @@ class HomePage extends StatelessWidget {
                     )
                   ],
                 ),
-                Column(
-                  children: [
-                    ItemTile(
-                      toWishlist: () {},
-                      previewItem: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ItemPreview(),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
+                const SizedBox(height: 20),
+                // Column(
+                //   children: [
+                //     ItemTile(
+                //       toWishlist: () {},
+                //       previewItem: () {
+                //         Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //             builder: (context) => const ItemPreview(),
+                //           ),
+                //         );
+                //       },
+                //     ),
+                //   ],
+                // ),
+                ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) => ItemTile(
+                    previewItem: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ItemPreview(),
+                        ),
+                      );
+                    },
+                    toWishlist: () {},
+                  ),
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                 ),
-                // ListView.builder(itemBuilder: itemBuilder),
               ],
             ),
           ),

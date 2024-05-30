@@ -10,7 +10,6 @@ Future<bool> openWhatsappChat({
   }
 
   final Uri parsedUrl = Uri.parse(url);
-
   if (!await canLaunchUrl(parsedUrl)) false;
 
   await launchUrl(parsedUrl);

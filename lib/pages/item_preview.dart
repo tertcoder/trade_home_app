@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:trade_home_app/theme/app_colors.dart';
 import 'package:trade_home_app/utils/open_whatsapp_chat.dart';
@@ -51,7 +50,7 @@ class ItemPreview extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -60,7 +59,7 @@ class ItemPreview extends StatelessWidget {
                   height: 48,
                   decoration: BoxDecoration(
                     color: AppColors.darkGray.withOpacity(0.7),
-                    border: Border.fromBorderSide(
+                    border: const Border.fromBorderSide(
                       BorderSide(
                         color: AppColors.lightGray,
                       ),
@@ -72,7 +71,7 @@ class ItemPreview extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Text(
+                const Text(
                   "Wishlist",
                   style: TextStyle(
                     color: AppColors.lightGray,
@@ -91,21 +90,18 @@ class ItemPreview extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 32),
-              Hero(
-                tag: 'item',
-                child: Container(
-                  height: 300,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.0),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  clipBehavior: Clip.antiAlias,
-                  child: Image.asset(
-                    'assets/images/item1.jpeg',
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    alignment: Alignment.topCenter,
-                  ),
+              Container(
+                height: 300,
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.0),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                clipBehavior: Clip.antiAlias,
+                child: Image.asset(
+                  'assets/images/item1.jpeg',
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  alignment: Alignment.topCenter,
                 ),
               ),
               const SizedBox(
@@ -164,6 +160,6 @@ class ItemPreview extends StatelessWidget {
   }
 
   String _truncatedText(String text) {
-    return text.length > 10 ? text.substring(0, 10) + "..." : text;
+    return text.length > 10 ? "${text.substring(0, 10)}..." : text;
   }
 }
