@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trade_home_app/components/button.dart';
 import 'package:trade_home_app/components/input_field.dart';
+import 'package:trade_home_app/pages/home_page.dart';
+import 'package:trade_home_app/pages/signup_page.dart';
 import 'package:trade_home_app/theme/app_colors.dart';
 
 class LoginPage extends StatelessWidget {
@@ -59,13 +61,27 @@ class LoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     Button(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
                       isPrimary: true,
                       label: "Connect Now",
                     ),
                     const SizedBox(height: 12),
                     Button(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignupPage(),
+                          ),
+                        );
+                      },
                       isPrimary: false,
                       label: "Create Account",
                     ),

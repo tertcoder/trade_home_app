@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:trade_home_app/components/button.dart';
 import 'package:trade_home_app/components/input_field.dart';
+import 'package:trade_home_app/pages/home_page.dart';
+import 'package:trade_home_app/pages/login_page.dart';
 import 'package:trade_home_app/theme/app_colors.dart';
 
 class SignupPage extends StatelessWidget {
@@ -19,7 +21,14 @@ class SignupPage extends StatelessWidget {
               children: [
                 const SizedBox(height: 10),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginPage(),
+                      ),
+                    );
+                  },
                   child: const Row(
                     children: [
                       Icon(
@@ -67,14 +76,14 @@ class SignupPage extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.asset(
-                              'assets/flags/india.png',
+                              'assets/flags/burundi.png',
                               width: 45,
                             ),
                           ),
                           const SizedBox(width: 12),
                           const Expanded(
                             child: InputField(
-                              hint: "22 1234 5678",
+                              hint: "+257 65 849 761",
                               obscureText: false,
                             ),
                           ),
@@ -124,7 +133,14 @@ class SignupPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       Button(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomePage(),
+                            ),
+                          );
+                        },
                         isPrimary: true,
                         label: "Create Account",
                       ),
